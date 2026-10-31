@@ -1,0 +1,7 @@
+customtkinter==6.0.0
+CTkMessagebox==2.7
+psycopg[binary]==3.3.6
+PyQt5==5.15.11
+PyQtWebEngine==5.15.7
+markdown-it-py==4.2.0
+tkinterweb==4.25.5
