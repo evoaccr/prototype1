@@ -332,7 +332,7 @@ def loginScreen():
     def login(*args):
         def save():
             tempTopLevel.destroy()
-            with open(r"./x.txt","w") as file:
+            with Path(__file__).resolve().with_name("x.txt").open("w", encoding="utf-8") as file:
                 file.write(mainUsername.get() + ",")
         global connection
 
@@ -360,7 +360,7 @@ def loginScreen():
                 global cursor
                 cursor = connection.cursor()
                 print("Connected to Old Portfolio")
-                with open(r"./x.txt","r") as file:
+                with Path(__file__).resolve().with_name("x.txt").open("r", encoding="utf-8") as file:
                     lines = file.readlines()
                     if lines == []:
                         tempTopLevel = CTkToplevel(window)
@@ -392,7 +392,7 @@ def loginScreen():
     password.pack(pady=5)
     enterButton = CTkButton(window,text="Sign in",command=login)
     enterButton.pack()
-    with open(r"./x.txt","r") as file:
+    with Path(__file__).resolve().with_name("x.txt").open("r", encoding="utf-8") as file:
         read = file.readlines()[0].split(",")
         if read != []:
             read[0] = read[0]
